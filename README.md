@@ -2,6 +2,9 @@
 
 A React-based web application for testing and verifying URL redirects. This tool helps you validate that old URLs properly redirect to their expected new destinations, making it ideal for website migrations, URL restructuring, and redirect audits.
 
+<img width="1203" height="929" alt="image" src="https://github.com/user-attachments/assets/6f973919-9d51-4f29-96c0-27abc5467299" />
+
+
 ## Features
 
 - **Bulk Redirect Testing**: Paste multiple URL pairs and test them all at once
