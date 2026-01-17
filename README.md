@@ -54,6 +54,40 @@ docker compose down
 docker compose up --build
 ```
 
+#### Custom URLs (Tailscale, Local Network, etc.)
+
+To access the development server via a custom hostname (e.g., Tailscale, local network IP):
+
+1. Copy the example environment file:
+   ```bash
+   cp .env.example .env.local
+   ```
+
+2. Edit `.env.local` and set your custom hostname:
+   ```bash
+   # For Tailscale
+   VITE_CUSTOM_HOST=myserver.tail08f20.ts.net
+   
+   # Or for local network IP
+   VITE_CUSTOM_HOST=192.168.1.100
+   ```
+
+3. Restart Docker Compose:
+   ```bash
+   docker compose down
+   docker compose up
+   ```
+
+4. Access via your custom URL:
+   ```
+   http://myserver.tail08f20.ts.net:11248
+   ```
+
+**Advanced Security**: To restrict which hosts can access the server, set `VITE_ALLOWED_HOSTS`:
+```bash
+VITE_ALLOWED_HOSTS=localhost,myserver.tail08f20.ts.net,192.168.1.100
+```
+
 ### Using npm (Local Development)
 
 1. Clone or download this repository

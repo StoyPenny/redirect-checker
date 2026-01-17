@@ -17,6 +17,12 @@ services:
       - NODE_ENV=development
       - VITE_HOST=0.0.0.0
       - VITE_PORT=11248
+      # Custom host configuration (loaded from .env.local if exists)
+      - VITE_CUSTOM_HOST=${VITE_CUSTOM_HOST:-}
+      - VITE_ALLOWED_HOSTS=${VITE_ALLOWED_HOSTS:-}
+    env_file:
+      - path: .env.local
+        required: false
     restart: unless-stopped
 
 volumes:
