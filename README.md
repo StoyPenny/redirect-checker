@@ -17,10 +17,44 @@ A React-based web application for testing and verifying URL redirects. This tool
 
 ## Prerequisites
 
+### Option 1: Docker (Recommended)
+- **Docker**: Version 20.10+ ([Install Docker](https://docs.docker.com/get-docker/))
+- **Docker Compose**: Version 2.0+ (included with Docker Desktop)
+
+### Option 2: Local Development
 - **Node.js**: Version 20.19+ or 22.12+ (required by Vite)
 - **npm**: Comes with Node.js
 
-## Installation
+## Installation & Development
+
+### Using Docker (Recommended)
+
+The easiest way to get started is with Docker Compose:
+
+```bash
+# Build and start the development server
+docker compose up
+
+# Or run in detached mode (background)
+docker compose up -d
+
+# View logs (if running in detached mode)
+docker compose logs -f
+
+# Stop the containers
+docker compose down
+```
+
+The application will be available at `http://localhost:11248` with hot-reload support.
+
+**Note**: Changes to source files will automatically reload in the browser. If you modify `package.json` dependencies, you'll need to rebuild:
+
+```bash
+docker compose down
+docker compose up --build
+```
+
+### Using npm (Local Development)
 
 1. Clone or download this repository
 2. Install dependencies:
@@ -29,15 +63,13 @@ A React-based web application for testing and verifying URL redirects. This tool
 npm install
 ```
 
-## Development
-
-Start the development server:
+3. Start the development server:
 
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
+The application will be available at `http://localhost:11248`.
 
 ## Build for Production
 

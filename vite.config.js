@@ -10,4 +10,15 @@ export default defineConfig({
       plugins: [tailwindcss()],
     },
   },
+  server: {
+    host: '0.0.0.0', // Allow external connections (required for Docker)
+    port: 11248,     // Default development port
+    strictPort: true, // Exit if port is already in use
+    watch: {
+      usePolling: true, // Enable polling for file changes (required for Docker)
+    },
+    hmr: {
+      host: 'localhost', // HMR host for browser WebSocket connection
+    },
+  },
 })
